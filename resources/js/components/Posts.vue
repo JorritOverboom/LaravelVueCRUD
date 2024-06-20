@@ -16,16 +16,10 @@
 <script setup>
     import { mapGetters, mapActions } from 'vuex'
 
-    export default {
-        name: 'Posts',
-        computed: {
-            ...mapGetters(['getPosts'])
-        },
-        methods: {
-            ...mapActions(['fetchPosts'])
-        },
-        created() {
-            this.fetchPosts()
-        }
-    }
+    // Using the 'defineProps' and 'defineEmits' helpers with `<script setup>`
+    const { getPosts, fetchPosts } = useStore(mapGetters, mapActions);
+
+    fetchPosts();
+
+    const posts = getPosts();
 </script>
