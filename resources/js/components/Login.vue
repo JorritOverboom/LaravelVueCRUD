@@ -10,7 +10,7 @@
                 <input type="submit" value="Login" class="mt-5 px-2 text-xl bg-gray-500 cursor-pointer">
             </button>
         </form>
-        <router-link class="mt-10 underline text-green-700 text-xl" to="/signup">Make an account</router-link>
+        <router-link class="mt-10 underline text-black-700 text-xl" to="/signup">Make an account</router-link>
     </div>
 </template>
 

@@ -7,7 +7,7 @@ const routes = [
     component: AuthenticatedLayout,
     children: [
       {
-        path: 'posts',
+        path: '/',
         name: 'Posts',
         component: () => import('@/components/Posts.vue')
       },

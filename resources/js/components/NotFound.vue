@@ -1,5 +1,5 @@
 <template>
-    <div class="">
+    <div class="flex flex-col justify-center items-center">
         404 Not Found
     </div>
 </template>

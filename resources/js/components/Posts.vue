@@ -1,25 +1,37 @@
 <template>
     <div class="flex flex-col justify-center items-center">
-        <h1 class="text-2xl mb-5">Posts</h1>
-        <div v-if="posts.length">
-            <div v-for="post in posts" :key="post.id" class="mb-4 p-4 bg-gray-100 rounded">
-                <h2 class="text-xl">{{  post.user.name }}</h2>
-                <p class="ml-2">{{  post.content }}</p>
-            </div>
-        </div>
-        <div v-else>
-            <p>No posts available</p>
-        </div>
+      <h1 class="text-2xl mb-5">Posts</h1>
+      <div v-if="posts.length === 0">
+        No posts available
+      </div>
+      <div v-else>
+        <ul>
+          <li v-for="post in posts" :key="post.id">
+            <h2>{{ post.postName }}</h2>
+            <p>{{ post.postContent }}</p>
+          </li>
+        </ul>
+      </div>
     </div>
-</template>
-
-<script setup>
-    import { mapGetters, mapActions } from 'vuex'
-
-    // Using the 'defineProps' and 'defineEmits' helpers with `<script setup>`
-    const { getPosts, fetchPosts } = useStore(mapGetters, mapActions);
-
+  </template>
+  
+  <script setup>
+  import { ref, onMounted } from 'vue';
+  import axios from '../axios.js';
+  
+  const posts = ref([]);
+  
+  const fetchPosts = async () => {
+    try {
+      const response = await axios.get('/posts');
+      posts.value = response.data;
+    } catch (error) {
+      console.error('Error fetching posts:', error);
+    }
+  };
+  
+  onMounted(() => {
     fetchPosts();
-
-    const posts = getPosts();
-</script>
+  });
+  </script>
+  
