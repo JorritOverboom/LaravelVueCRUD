@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class ForumPostSeeder extends Seeder
+class ForumPostsSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -23,6 +23,18 @@ class ForumPostSeeder extends Seeder
             [
                 'user_id' => 2,
                 'content' => 'This is a post by JaneSmith',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'user_id' => 12,
+                'content' => 'This is a post by Henk',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'user_id' => 13,
+                'content' => 'This is a post by Gerda',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

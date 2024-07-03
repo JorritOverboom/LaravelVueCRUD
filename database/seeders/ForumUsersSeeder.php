@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
-class ForumUserSeeder extends Seeder
+class ForumUsersSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -23,6 +23,18 @@ class ForumUserSeeder extends Seeder
             ],
             [
                 'name' => 'JaneSmith',
+                'password' => Hash::make('password123'),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Henk',
+                'password' => Hash::make('password123'),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Gerda',
                 'password' => Hash::make('password123'),
                 'created_at' => now(),
                 'updated_at' => now(),

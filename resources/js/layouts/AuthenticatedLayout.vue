@@ -4,7 +4,6 @@
       <header class="flex justify-between items-center p-4 bg-gray-800 text-white">
         <router-link class="mx-2" to='/'>LaravelVueCRUD</router-link>
         <div class="text-xl">
-          <router-link class="mx-2" to='/create'>Create a post</router-link>
           <router-link class="mx-2" to='/login'>Login</router-link>
         </div>
       </header>

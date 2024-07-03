@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ForumUser extends Model
+class ForumUsers extends Model
 {
     use HasFactory;
 
@@ -14,7 +14,7 @@ class ForumUser extends Model
      *
      * @var string
      */
-    protected $table = 'forum_users';
+    protected $table = 'forumusers';
 
     /**
      * The attributes that are mass assignable.
@@ -35,6 +35,6 @@ class ForumUser extends Model
      */
     public function posts()
     {
-        return $this->hasMany(ForumPost::class, 'usersId');
+        return $this->hasMany(ForumPosts::class, 'usersId');
     }
 }
